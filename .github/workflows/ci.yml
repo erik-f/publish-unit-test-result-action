@@ -38,7 +38,7 @@ jobs:
         python -m pytest --continue-on-collection-errors --junit-xml ../test-results/pytest.xml
 
     - name: Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@master
+      uses: erik-f/publish-unit-test-result-action@comment-on-pr
       if: always()
       with:
         check_name: Unit Test Results
@@ -47,6 +47,7 @@ jobs:
         report_individual_runs: true
         deduplicate_classes_by_file_name: false
         log_level: DEBUG
+        comment_on_pr: false
 
     - name: Upload Test Results
       if: always()
