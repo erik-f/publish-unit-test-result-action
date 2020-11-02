@@ -755,6 +755,7 @@ def publish(token: str, event: dict, repo_name: str, commit_sha: str,
     logger.info('publishing results for commit {}'.format(commit_sha))
     publish_check(stats, cases)
 
+    logger.info('comment_on_pr is {}'.format(comment_on_pr))
     if comment_on_pr:
         pull = get_pull(commit_sha)
         if pull is not None:
@@ -841,6 +842,7 @@ if __name__ == "__main__":
     hide_comment_mode = get_var('HIDE_COMMENTS') or 'all but latest'
     # Comment on PRs if COMMENT_ON_PR is not set to 'false'
     comment_on_pr = get_var('COMMENT_ON_PR') != 'false'
+    logger.info('COMMENT_ON_PR is {}'.format(comment_on_pr))
     commit = get_var('COMMIT') or get_commit_sha(event, event_name)
     files = get_var('FILES')
 
