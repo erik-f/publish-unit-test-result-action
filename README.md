@@ -1,4 +1,4 @@
-# GitHub Action to Publish Unit Test Results
+# GitHub Action to Publish Unit Test Results 
 
 This [GitHub Action](https://github.com/actions) analyses Unit Test result files and
 publishes the results on GitHub. It supports the JUnit XML file format.
